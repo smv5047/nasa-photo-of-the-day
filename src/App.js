@@ -1,13 +1,25 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import "./App.css";
+import getNasaImages from "./nasa-api"
 
-function App() {
+
+
+function App(props) {
+  
+  const[NASAImage, updateNASAImage] = useState([]);
+
+  useEffect(()=> {
+   
+    getNasaImages(updateNASAImage);
+  }, []);
+
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <h1>NASA Image of the Day</h1>
+      <h5>{NASAImage.date}</h5>
+      <h3>{NASAImage.title}</h3>
+      <img src={NASAImage.url} alt="Nasa of the Day" />
+      <p>{NASAImage.explanation}</p>
     </div>
   );
 }
