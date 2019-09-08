@@ -7,6 +7,7 @@ import {TwitterShareButton, FacebookShareButton, EmailShareButton, LinkedinShare
 import {TwitterIcon, FacebookIcon, EmailIcon, LinkedinIcon} from 'react-share';
 
 
+
 const CustomDiv = styled.div`
   display: flex;
   background: #E9ECEF;
@@ -23,10 +24,8 @@ const ImageDiv = styled.div`
   }
 `
 
-const BlackDiv = styled.div`
-  background: black;
-`
 
+// Animation Courtesy of Emile Choghi https://codepen.io/echoghi
 const AnimationDiv = styled.div`
 @keyframes particleAnimation
 {
@@ -82,7 +81,7 @@ function App(props) {
   return (
     <div className="App">
       <Jumbotron>
-        <h1 classNAme="display-3">NASA Image of the Day</h1>
+        <h1 className="display-4">NASA Image of the Day</h1>
         
         <h3>{NASAImage.title}</h3>
         <h5>{NASAImage.date}</h5>
@@ -116,7 +115,7 @@ function App(props) {
           </EmailShareButton>
         </SocialDiv>
       </CustomDiv>
-      <BlackDiv>
+      
         <AnimationDiv>
           <p>.</p>
         </AnimationDiv>
@@ -126,7 +125,7 @@ function App(props) {
         <AnimationDiv>
           <p>.</p>
         </AnimationDiv>
-      </BlackDiv>
+     
     </div>
   );
 }
